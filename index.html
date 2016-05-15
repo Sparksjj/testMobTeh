@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,17 +16,148 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  
     <link href="css/main.css" rel="stylesheet">
 
   </head>
   <body>
 
+    <header>
+      <nav class="navbar navbar-default top-menu">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+      
+           <!-- Collect the nav links -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav left-links">
+              <li class="current"><a href="#"><i class="fa fa-file fa-2x" aria-hidden="true"></i> Создать пост</a></li>
+              <li><a href="#"><i class="fa fa-building fa-2x" aria-hidden="true"></i> Очередь</a></li>
+              <li><a href="#"><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i> История</a></li>
+              <li><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i> Удаленные</a></li>
+              <li><a href="#"><i class="fa fa-camera fa-2x" aria-hidden="true"></i> Аккаунт</a></li>
+              <li><a href="#"><i class="fa fa-cogs fa-2x" aria-hidden="true"></i> Настройки</a></li>
+            </ul>
 
+    <!-- ы        <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Alex Plyuto</a></li>
+      <li><a href="#">30<i class="fa fa-usd" aria-hidden="true"></i></a></li>
+      <li><a href="#">Выход</a></li>
+    </ul> -->
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+
+ 
+<div id="main-content" class="clearfix">
+    <i class="fa fa-exchange fa-2x" aria-hidden="true" id="hide-show-button"></i>    
+    
+  <aside class="scrollbar-inner pull-left">
+    <span class="text-center">Текущий аккаунт:</span>
+
+    <section class="min-users current">
+      <img src="image/avatar.jpg" alt="img" class="img-circle"> candy_shop
+    </section>
+    <section class="min-users">
+      <img src="image/avatar.jpg" alt="img" class="img-circle"> bestfood
+    </section>
+    <section class="min-users">
+      <img src="image/avatar.jpg" alt="img" class="img-circle"> business_idea
+    </section>
+    <section class="min-users" id="new-user">
+      <img src="image/round.png" alt="img" class="img-circle"> Добавить
+    </section>
+    <div id="for-scroll"></div>
+  </aside>
+
+  <div class="container-fluid" id="center-block">
+  
+    <ul class="list-inline">
+      <li class="text-center">Новый</li>
+      <li class="text-center">Сделать repost</li>
+    </ul>
+
+    <div id="left-center-block" class="col-md-4 col-sm-12 content-wrapper">
+      <section id="add-file" class="content text-center">
+        <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+        Преретащите сюда <br/>
+        фотографию или видио 
+        <span>(JPG, PNG, MP4, AVI, 3GP)</span>
+
+        <ul class="list-inline text-center" id="load-buttons">
+          <li>Загрузить</li>
+          <li>URL</li>
+        </ul>   
+
+        <aside>
+          <ul class="list-inline text-center" id="download-control">
+            <li><i class="fa fa-crop fa-lg" aria-hidden="true"></i>Редактировать</li>
+            <li>Удалить</li>
+          </ul>
+        </aside>
+
+      </section>
+    </div>
+
+    <div id="center-center-block" class="col-md-4 col-sm-12 content-wrapper">
+
+      <section id="repost-article" class="content">
+        Товарищи! рамки и место обучения кадров играет важную роль в формировании новых предложений. Таким образом новая модель организационной деятельности способствует подготовки и реализации систем массового участия. Таким образом укрепление и развитие структуры способствует подготовки и реализации дальнейших направлений развития. 
+        <br/>
+        Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание направлений прогрессивного развития. 
+        <br/>
+        Значимость этих проблем образом укрепление настолько очевидна, что новая модель организационной деятельности играет важную роль в формировании дальнейших направлений развития.
+        <br/>
+        Значимость этих проблем настолько очевидна, что дальнейшее развитие. Таким образом укрепление и развитие структуры способствует подготовки и реализации дальнейших направлений развития. #хэштэг #рецепты 
+
+        <aside>
+          <ul class="list-inline text-center" id="article-control">
+            <li>123</li>
+            <li><i class="fa fa-smile-o fa-lg" aria-hidden="true"></i></li>
+          </ul>
+        </aside> 
+
+      </section>
+
+    </div>
+
+    <div id="right-center-block" class="col-md-4 col-sm-12 content-wrapper">
+      <section id="calendar-section" class="content">
+        <table id="calendar">
+          <thead>
+            <tr><td>‹<td colspan="5"><td>›
+            <tr><td>M<td>T<td>W<td>T<td>F<td>S<td>S
+          <tbody>
+        </table>
+
+        <p><span>13:00</span><i class="fa fa-clock-o fa-lg pull-right" aria-hidden="true"></i></p>
+
+        <ul id="calendar-control" class="list-unstyled text-center">
+          <li>В очередь <i class="fa fa-calendar fa-lg pull-right" aria-hidden="true"></i></li>
+          <li>Отправить сейчас <i class="fa fa-paper-plane fa-lg pull-right" aria-hidden="true"></i></li>
+        </ul>
+
+      </section>
+    </div>
+
+  </div>
+
+</div>    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scrollbar/jquery.scrollbar.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/8bb910b329.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

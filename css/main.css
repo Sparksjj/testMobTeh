@@ -1,0 +1,572 @@
+*{
+	transition: background-color .2s;
+}
+body{
+  	font-family: 'Calibri light', Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	background-color: #e3e3e3;
+}
+
+/* top menu =====>>>>>*/
+.top-menu{
+	background-color:#fff;
+	min-height: 70px;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+}
+
+.top-menu div.container-fluid{
+	padding-left: 0;
+}
+
+.top-menu .navbar-header{
+	min-height: 70px;
+	line-height: 70px;
+}
+
+.top-menu .navbar-header .navbar-toggle{
+	margin-top: 16px;
+}
+
+.top-menu div.navbar-collapse{
+	padding-left: 0px;
+}
+
+.top-menu .left-links{
+	margin-left: 200px;
+	padding-left: 50px;
+}
+
+.top-menu .left-links li{
+	position: relative;
+
+	height: 100%;
+}
+
+.top-menu .left-links li a:hover, .top-menu li.current{
+	background-color: #f3f3f3;
+}
+
+.top-menu .left-links li > a{
+	color: #333;
+	line-height: 40px;
+	padding-left: 60px;
+	padding-right: 30px;
+}
+
+.top-menu .left-links li i{
+	margin-left: 20px;
+	position: absolute;
+	left: 0;
+	line-height: 35px;
+}
+
+
+
+/* main-content ======>>>> */
+#main-content{
+	width: 100%;
+	height: 750px;
+	background-color: #e3e3e3;
+	position: relative;	
+}
+
+/* center block=====>>>> */
+
+#center-block{
+	margin: 0;
+	margin-left: 200px;
+	padding: 50px;
+	font-size: 0;
+}
+
+	/* left on center block=====>>>> */
+#center-block .content-wrapper{
+	display: inline-block;	
+	background-color: #fff;
+	max-width: 550px;
+	min-width: 500px;
+	height: 600px;
+	font-size: 14px;
+	padding: 50px;
+}
+
+#left-center-block #add-file, #center-center-block #repost-article{
+	max-width: 450px;
+	min-width: 400px;
+	height: 500px;
+	background-color: #eee;
+	position: relative;
+	margin-right: 0;
+}
+#left-center-block #add-file{
+	padding-top: 33%;
+	color: #888;
+}
+#left-center-block #add-file > i, #left-center-block #add-file > span {
+	display: block;
+}
+#left-center-block #load-buttons{
+	margin-top: 15px;
+	color: #fff;
+	font-size: 0;
+}
+#left-center-block #load-buttons > li{
+	background-color: #ababab;
+	width: 100px;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	cursor: pointer;
+}
+#left-center-block #load-buttons > li:hover{
+	background-color: #999;
+}
+#left-center-block #load-buttons > li:first-child{
+	margin-right: 15px;
+}
+#left-center-block aside > #download-control,
+#center-center-block #repost-article  #article-control{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+}
+#left-center-block aside > #download-control >li,
+#center-center-block #repost-article  #article-control li{
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	background-color: #5c5fc9;
+	width: 30%;
+	cursor: pointer;
+	color: 	#fff;
+}
+#left-center-block aside > #download-control >li:first-child,
+#center-center-block #repost-article  #article-control li:first-child{
+	width: 70%;
+	text-align: left;
+	padding-left: 60px;
+	position: relative;
+}
+#left-center-block aside > #download-control >li:first-child i{
+	position: absolute;
+	top: 50%;
+	margin-top: -7px;
+	left: 25px;
+}
+#left-center-block aside > #download-control >li:hover{
+	background-color: #5052ae;
+}
+	/* center on center block ====>>> */
+
+#center-center-block{
+}
+#center-center-block #repost-article{
+	background-color: #fff;
+	color: #7679d2;
+	font-size: 16px;
+}
+#center-center-block #repost-article  #article-control{
+	border-top: 1px solid #ccc;
+}
+#center-center-block #repost-article  #article-control li{
+	background-color: inherit;
+	color: #7679d2;
+	font-size: 16px;
+	text-align: center;
+}
+#center-center-block #repost-article  #article-control li:hover{
+	background-color:#f5f5f5;
+}
+#center-center-block #repost-article  #article-control li:first-child{
+	color: #999;
+}
+
+
+	/* right on center block ====>>> */
+#right-center-block{
+	position: relative;
+}
+#calendar {
+  width: 340px;
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+	/* date section */
+#calendar thead tr:last-child {
+  font-size: 18px;
+  color: #5c5fc9;
+  height: 40px;
+}
+
+	/* calendar head  */
+#calendar thead tr:nth-child(1) td:nth-child(2) {
+  color: #fff;
+  font-size: 18px;
+  background-color: #5c5fc9;
+  height: 50px;
+}
+	/* control */
+#calendar thead tr:nth-child(1) td:nth-child(1), #calendar thead tr:nth-child(1) td:nth-child(3) {
+  color: #fff;  
+  font-size: 18px;
+  background-color: #5c5fc9;
+  cursor: pointer;
+}
+#calendar thead tr:nth-child(1) td:nth-child(1):hover, #calendar thead tr:nth-child(1) td:nth-child(3):hover {
+  background-color: #5052ae;
+}
+	/* calendar body */
+#calendar tbody td {
+  color: #59676b;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+}
+	/* holidays */
+#calendar tbody td:nth-child(n+6), #calendar2 .holiday {
+  
+}
+	/* not current month */
+
+#calendar .notCurrent{
+	opacity: .5;
+}
+
+
+#calendar tbody td.today {
+  background-color: #5c5fc9;
+  color: #fff;
+}
+
+
+	/* new/repost sections */
+#center-block > ul{
+	display: block;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+}
+#center-block > ul > li{
+	font-size: 12px;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	display: inline-block;
+	background-color: #5c5fc9;
+	margin: 0;
+	cursor: pointer;
+	color: #fff;
+}
+#center-block > ul > li:first-child{
+	background-color: #fff;
+	color: #5c5fc9;
+}
+
+/* teme section */
+#calendar-section > p{
+	position: absolute;
+	width: 61%;
+	bottom: 170px;
+	left: 50%;
+	margin-left: -30%;
+	border-bottom: 1px solid #ccc;
+}
+#calendar-section > p span{
+	color: #5c5fc9;
+	font-size: 18px;
+}
+
+#calendar-section > p i{
+	color: #aaa;
+	line-height: 25px;
+}
+
+/* calendar controll ===>>> */
+#calendar-control{
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	margin: 0;
+	margin-left: -120px;
+
+}
+
+#calendar-control li{
+	width: 240px;
+	height: 50px;
+	background-color: #888;
+	line-height: 50px;
+	color: #fff;
+	background-color: #484a9f;
+	cursor: pointer;
+}
+#calendar-control li > i{
+	line-height: 50px;
+	padding-right: 15px;	
+}
+
+#calendar-control li:first-child{
+	margin-bottom: 10px;
+	border: 1px solid #484a9f;
+	color: #484a9f;
+	background-color: #fff;
+}
+
+/* 	aside ======>>>> */
+
+#hide-show-button{
+	position: absolute;
+	left: 10px;
+	top: 12px;
+	z-index: 1;
+	cursor: pointer;
+	display: none;
+}
+
+.scrollbar-inner{
+	width: 200px;
+	height: 100%;/* 
+	overflow-y: scroll; */
+	overflow-x: hidden;
+	background-color: #5c5fc9;
+}
+
+#for-scroll{
+	height: 1000px;
+}
+.scrollbar-inner .min-users{
+ 	padding-right: 10px;
+ 	padding-left: 60px;
+ 	color: #fff;
+ 	height: 60px;
+ 	line-height: 60px;
+ 	width: 200px;
+ 	cursor: pointer;
+ 	position: relative;
+}
+
+ .scrollbar-inner section img, .scrollbar-inner section span{
+ 	width: 40px;
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	left: 10px;
+ }
+
+ .scrollbar-inner section:hover, .current{
+	background-color: #7679d2;
+ }
+ #main-content .scrollbar-inner > span{
+ 	color: white;
+ 	display: block;
+ 	height: 50px;
+ 	line-height: 50px;
+ }
+
+
+/* scroll ===========>>> */
+
+@media only screen and (max-width: 1500px){
+	#center-block{
+		padding: 10px;
+	}
+	#center-block .content-wrapper{
+		padding: 10px;
+	}
+	#center-block .content-wrapper {
+		min-width: 450px;
+	}
+}
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width : 991px){
+
+}
+
+@media only screen and (max-width: 583px){
+
+}
+
+@media only screen and (max-width: 680px){
+
+}
+
+@media only screen and (max-width: 650px){
+
+}
+
+@media only screen and (max-width: 428px){
+
+}
+
+@media only screen and (max-width: 767px){
+	/* top menu */
+	.top-menu{
+		background-color:#fff;
+		min-height: 70px;
+		border: none;
+		border-radius: 0;
+		margin: 0;
+	}
+	.top-menu .left-links{
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width : 992px){
+
+}
+
+
+
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+}
+ 
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+ 
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+.scroll-element {
+    display: none;
+}
+.scroll-element, .scroll-element div {
+    box-sizing: content-box;
+}
+ 
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+ 
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+ 
+.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+    overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+ 
+/*************** INNER SCROLLBAR ***************/
+
+
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div
+{
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+ 
+.scrollbar-inner > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+ 
+.scrollbar-inner > .scroll-element.scroll-x {
+    bottom: 2px;
+    height: 8px;
+    left: 0;
+    width: 100%;
+}
+ 
+.scrollbar-inner > .scroll-element.scroll-y {
+    height: 100%;
+    right: 2px;
+    top: 0;
+    width: 8px;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_outer,
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+ 
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: #7477d1;}
+.scrollbar-inner > .scroll-element .scroll-bar { background-color: #fff; opacity: 1;}
+.scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #fff; }
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: #fff; }
+ 
+ 
+/* update scrollbar offset if both scrolls are visible */
+ 
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+ 
+ 
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }

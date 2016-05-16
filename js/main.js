@@ -90,6 +90,9 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclic
 
 
 /*drag ===>>>*/
+$("#load-buttons li").eq(0).on("click", function(){
+	$("#upload input").trigger('click');
+})
 
 var holder = document.getElementById('load-image'),
     tests = {
@@ -153,23 +156,18 @@ if (tests.dnd) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $("#download-control li").eq(1).on("click", function(){	
 	returnDefault();
 })
+
+
+
+
+
+
+
+
+
 
 /*cropie ====>>>*/
 

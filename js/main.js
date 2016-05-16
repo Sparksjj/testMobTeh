@@ -108,7 +108,8 @@ var holder = document.getElementById('load-image'),
       'image/jpeg': true,
       'image/gif': true
     },
-    oldData;
+    oldData,
+    el;
 
 "filereader formdata progress".split(' ').forEach(function (api) {
   if (tests[api] === false) {
@@ -128,7 +129,7 @@ function previewfile(file) {
     reader.onload = function (event) {
       var image = new Image();
       image.src = event.target.result;
-      image.width = 500; // a fake resize
+
       initCrope(image);
     };
 
@@ -138,56 +139,48 @@ function previewfile(file) {
   }
 }
 
-function readfiles(files) {
-
-    var formData = tests.formdata ? new FormData() : null;
-    for (var i = 0; i < files.length; i++) {
-      if (tests.formdata) formData.append('file', files[i]);
-      previewfile(files[i]);
-    }
-
-/*    // now post a new XHR request
-    if (tests.formdata) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', '/mobteh.php');
-      xhr.onload = function() {
-        progress.value = progress.innerHTML = 100;
-      };
-
-      if (tests.progress) {
-        xhr.upload.onprogress = function (event) {
-          if (event.lengthComputable) {
-            var complete = (event.loaded / event.total * 100 | 0);
-            progress.value = progress.innerHTML = complete;
-          }
-        }
-      }
-
-      xhr.send(formData);
-    }*/
-}
 
 if (tests.dnd) { 
   holder.ondragover = function () { this.className = 'hover'; return false; };
   holder.ondragend = function () { this.className = ''; return false; };
   holder.ondrop = function (e) {
     this.className = '';
-    e.preventDefault();/*
-    console.log(e.dataTransfer.files)*/
-    readfiles(e.dataTransfer.files);
+    e.preventDefault();
+    previewfile(e.dataTransfer.files[0]);
   }
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$("#download-control li").eq(1).on("click", function(){	
+	returnDefault();
+})
+
 /*cropie ====>>>*/
 
 function initCrope(img){
-	var el = document.getElementById('load-image');
+	
+	cleanCrop();
+
+	el = document.getElementById('load-image');
 	var vanilla = new Croppie(el, {
     viewport: { width: 100, height: 100 },
-    boundary: { width: "100%", height: 100 },
+    boundary: { width: "100%", height: 400 },
     showZoomer: false,
     enableOrientation: true
 	});
@@ -195,6 +188,7 @@ function initCrope(img){
 	vanilla.bind({
 	    url: img.src,
 	});
+
 	//on button click
 	$("#download-control li").eq(0).on("click", function(){
 		vanilla.result('canvas').then(function (src) {
@@ -203,6 +197,26 @@ function initCrope(img){
 	})
 }
 
-function drowCroppieElement(img){
 
+
+function cleanCrop(){
+	if (!oldData) {
+		oldData = $("#emptyMessage").detach();
+		$("#load-image").css("padding", "0");		
+	}else{
+		$(".cr-boundary").add(".cr-slider-wrap").remove();
+	};
+		$("#load-image img").remove();
+}
+
+function drowCroppieElement(img){
+	cleanCrop();
+	img.prependTo("#load-image");
+	$("#download-control li").eq(0).unbind("click");
+}
+
+function returnDefault(){
+	cleanCrop();
+	oldData.prependTo("#load-image").css("padding-top", "33%");
+	oldData="";
 }

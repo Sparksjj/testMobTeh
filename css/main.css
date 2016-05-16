@@ -162,9 +162,10 @@ body{
 	display: block;
 }
 #left-center-block #load-buttons{
-	margin-top: 10px;
+	padding-top: 5px;
 	color: #fff;
 	font-size: 0;
+	margin-bottom: 5px;
 }
 #left-center-block #load-buttons > li{
 	background-color: #ababab;
@@ -217,6 +218,12 @@ body{
 }
 #left-center-block aside > #download-control >li:hover{
 	background-color: #5052ae;
+}
+
+.croppie-container .cr-boundary {
+    position: relative;
+    z-index: 100;
+    
 }
 	/* center on center block ====>>> */
 

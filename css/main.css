@@ -110,7 +110,7 @@ body{
 	font-size: 0;
 }
 
-	/* left on center block=====>>>> */
+	/* left on center block new mess=====>>>> */
 #center-block .content-wrapper{
 	display: inline-block;	
 	background-color: #fff;
@@ -225,8 +225,71 @@ body{
     z-index: 100;
     
 }
-	/* center on center block ====>>> */
 
+/* repost */
+#repost{
+	display: none;
+}
+
+#url-img-wrapper{
+	display: none;
+}
+#repost > div{
+	max-width: 600px;
+	margin: 200px auto;
+	color: #5c5fc9;
+	font-size: 16px;
+}
+#repost .text-filds, #emptyMessage .text-filds{
+	border: none;
+	border-bottom: 1px solid #5c5fc9;
+	border-radius: 0;
+	box-shadow: none;
+}
+#emptyMessage .text-filds{
+	margin: 0 auto;
+	background-color: #eee;
+	width: 350px;
+}
+#repost-button, #url-img-button{
+	width: 80px;
+	height: 30px;
+	background-color: #5c5fc9;
+	color: #fff;
+	border: none;
+	margin-top: 10px;
+}
+
+#url-img-button{
+	background-color: #ababab;
+}
+
+/* controll crop */
+#cr-control-wrap{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 20px;
+	display: none;
+}
+#cr-control-wrap input{
+	margin: 0 auto;
+	width: 80%;
+}
+#cr-control-wrap i{
+	font-size: 2em;
+	position: absolute;
+	right: 3px;
+	bottom: 7px;
+	cursor: pointer;
+}
+
+#cr-control-wrap i:first-child{
+	right: 100%;
+	margin-right: -33px;
+}
+
+/* center on center block ====>>> */
 #center-center-block{
 }
 #center-center-block #repost-article{
@@ -667,23 +730,6 @@ body{
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .scroll-wrapper {

@@ -22,6 +22,23 @@ $("#hide-show-button").on("click", function(){
 	$("#hide-show-button").animate({left: position}, 200);
 });
 
+/*swich repost/new*/
+
+$("#center-block > .list-inline li").eq(0).on("click", function(){
+	$("#add-file").css("display", "block");
+	$("#repost").css("display", "none");
+	$("#center-block > .list-inline li").eq(0).css({"background-color": "#5c5fc9", "color": "#fff"});
+	$("#center-block > .list-inline li").eq(1).css({"background-color": "#fff", "color": "#5c5fc9"});
+})
+$("#center-block .list-inline li").eq(1).on("click", function(){
+	$("#add-file").css("display", "none");
+	$("#repost").css("display", "block");
+	$("#center-block > .list-inline li").eq(1).css({"background-color": "#5c5fc9", "color": "#fff"});
+	$("#center-block > .list-inline li").eq(0).css({"background-color": "#fff", "color": "#5c5fc9"});
+})
+
+/*clock help*/
+
 /*Calendar===>>>*/
 function Calendar(id, year, month) {
 	var intMonth = month;
@@ -72,7 +89,7 @@ function Calendar(id, year, month) {
 	document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
 	document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
 	
-	if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+	if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  
 	    document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
 	}
 }
@@ -90,41 +107,33 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclic
 
 
 /*drag ===>>>*/
+
+	/*trigger input file event*/
 $("#load-buttons li").eq(0).on("click", function(){
 	$("#upload input").trigger('click');
 })
+$("#upload input").change(function() {
+  previewfile( this.files[0]);
+});
+
 
 var holder = document.getElementById('load-image'),
     tests = {
       filereader: typeof FileReader != 'undefined',
       dnd: 'draggable' in document.createElement('span'),
-      formdata: !!window.FormData,
-      progress: "upload" in new XMLHttpRequest
+      formdata: !!window.FormData
     }, 
     support = {
       filereader: document.getElementById('filereader'),
       formdata: document.getElementById('formdata'),
-      progress: document.getElementById('progress')
+     
     },
     acceptedTypes = {
       'image/png': true,
       'image/jpeg': true,
       'image/gif': true
     },
-    oldData,
-    el;
-
-"filereader formdata progress".split(' ').forEach(function (api) {
-  if (tests[api] === false) {
-    support[api].className = 'fail';
-  } else {
-    // FFS. I could have done el.hidden = true, but IE doesn't support
-    // hidden, so I tried to create a polyfill that would extend the
-    // Element.prototype, but then IE10 doesn't even give me access
-    // to the Element object. Brilliant.
-    support[api].className = 'hidden';
-  }
-});
+    oldData;
 
 function previewfile(file) {
   if (tests.filereader === true && acceptedTypes[file.type] === true) {
@@ -142,7 +151,6 @@ function previewfile(file) {
   }
 }
 
-
 if (tests.dnd) { 
   holder.ondragover = function () { this.className = 'hover'; return false; };
   holder.ondragend = function () { this.className = ''; return false; };
@@ -155,21 +163,25 @@ if (tests.dnd) {
 
 
 
-
+/*clean crope field*/
 $("#download-control li").eq(1).on("click", function(){	
 	returnDefault();
 })
 
 
+/*crop ====>>>*/
 
+	/*crop url ====>>>*/
 
+	$('#load-buttons li').eq(1).on('click', function(){
+		$("#url-img-wrapper").slideToggle();
+	})
 
-
-
-
-
-
-/*cropie ====>>>*/
+	$("#url-img-wrapper button").on("click", function(){
+		var src = $("#url-img-wrapper input").val();
+		console.log(src)
+		initCrope(src);
+	})
 
 function initCrope(img){
 	
@@ -179,12 +191,23 @@ function initCrope(img){
 	var vanilla = new Croppie(el, {
     viewport: { width: 100, height: 100 },
     boundary: { width: "100%", height: 400 },
-    showZoomer: false,
+    showZoomer: true,
     enableOrientation: true
 	});
-
+	var src;
+	if (typeof img == "string") {
+		src = img;
+	}else{
+		src = img.src;
+	}
 	vanilla.bind({
-	    url: img.src,
+	    url: src,
+	});
+
+	/*rotate buttons*/
+	$("#cr-control-wrap").css("display", "block")
+	$('.vanilla-rotate').on('click', function() {
+		vanilla.rotate(parseInt($(this).data('deg')));
 	});
 
 	//on button click
@@ -196,7 +219,6 @@ function initCrope(img){
 }
 
 
-
 function cleanCrop(){
 	if (!oldData) {
 		oldData = $("#emptyMessage").detach();
@@ -205,6 +227,7 @@ function cleanCrop(){
 		$(".cr-boundary").add(".cr-slider-wrap").remove();
 	};
 		$("#load-image img").remove();
+		$("#cr-control-wrap").css("display", "none")
 }
 
 function drowCroppieElement(img){

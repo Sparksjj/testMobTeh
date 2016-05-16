@@ -54,7 +54,7 @@
             </ul>
             <i class="fa fa-sort fa-2x" aria-hidden="true" id="toggle-user-info"></i>
           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+        </div>
       </nav>
     </header>
 
@@ -88,34 +88,55 @@
     </ul>
 
     <div id="left-center-block" class="col-md-4 col-sm-12 content-wrapper">
-      <section id="add-file" class="content text-center">
+     <section id="add-file" class="content text-center">
+     
+       <div id="load-image">
+       <section id="emptyMessage">
+         <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+         Преретащите сюда <br/>
+         фотографию или видио 
+         <span>(JPG, PNG, MP4, AVI, 3GP)</span>
+         <p id="upload" class="hidden"><input type="file" id="file"></p>
+     
 
-        <div id="load-image">
-        <section id="emptyMessage">
-          <i class="fa fa-download fa-3x" aria-hidden="true"></i>
-          Преретащите сюда <br/>
-          фотографию или видио 
-          <span>(JPG, PNG, MP4, AVI, 3GP)</span>
-          <p id="upload" class="hidden"><label>Drag & drop not supported, but you can still upload via this input field:<br><input type="file"></label></p>
+     
+         <ul class="list-inline text-center" id="load-buttons">
+           <li>Загрузить</li>
+           <li>URL</li>
+         </ul>  
 
-          <p id="filereader">File API & FileReader API not supported</p>
-          <p id="formdata">XHR2's FormData is not supported</p>
-          <p id="progress">XHR2's upload progress isn't supported</p>
-        </section>
-
-          <ul class="list-inline text-center" id="load-buttons">
-            <li>Загрузить</li>
-            <li>URL</li>
-          </ul>   
+        <div class="form-group" id="url-img-wrapper">
+          <input class="form-control text-filds" id="url-img" placeholder="http://html5book.ru/html5.jpg">
+          <button type="" id="url-img-button">Ок</button>
         </div>
-        <aside>
-          <ul class="list-inline text-center" id="download-control">
-            <li><i class="fa fa-crop fa-lg" aria-hidden="true"></i>Редактировать</li>
-            <li>Удалить</li>
-          </ul>
-        </aside>
 
-      </section>
+        </section> 
+
+        <div id="cr-control-wrap">
+         <i class="fa fa-reply vanilla-rotate" data-deg="-90" aria-hidden="true"></i>
+         <i class="fa fa-share vanilla-rotate" data-deg="90" aria-hidden="true"></i>
+        </div>
+
+       </div>
+       <aside>
+         <ul class="list-inline text-center" id="download-control">
+           <li><i class="fa fa-crop fa-lg" aria-hidden="true"></i>Редактировать</li>
+           <li>Удалить</li>
+         </ul>
+       </aside>
+     
+     </section>
+
+
+     <section id="repost" class="content text-center">
+
+        <div class="form-group">
+          <label for="repost-fild">Repost URL</label>
+          <input class="form-control text-filds" id="repost-fild" placeholder="http://html5book.ru/html5-semantic-elements">
+          <button type="" id="repost-button">Ок</button>
+        </div>
+
+     </section>
     </div>
 
     <div id="center-center-block" class="col-md-4 col-sm-12 content-wrapper">
@@ -162,6 +183,7 @@
   </div>
 
 </div>    
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

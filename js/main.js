@@ -3,6 +3,25 @@ jQuery(document).ready(function(){
     jQuery('.scrollbar-inner').scrollbar();
 });
 
+/*hide show user info panel*/
+$("#toggle-user-info").on("click", function(){
+	$("#user-info").slideToggle();
+});
+
+/*hide show userspanel*/
+var position = "";
+$("#hide-show-button").on("click", function(){
+
+	$(".scrollbar-inner").fadeToggle();	
+
+	if (position) {
+		position = "";
+	}else{
+		position = "200px";
+	};
+	$("#hide-show-button").animate({left: position}, 200);
+});
+
 /*Calendar===>>>*/
 function Calendar(id, year, month) {
 	var intMonth = month;
@@ -66,4 +85,124 @@ document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(1)').onclic
 // switch month
 document.querySelector('#calendar thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
   Calendar("calendar", document.querySelector('#calendar thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar thead td:nth-child(2)').dataset.month)+1);
+}
+
+
+
+/*drag ===>>>*/
+
+var holder = document.getElementById('load-image'),
+    tests = {
+      filereader: typeof FileReader != 'undefined',
+      dnd: 'draggable' in document.createElement('span'),
+      formdata: !!window.FormData,
+      progress: "upload" in new XMLHttpRequest
+    }, 
+    support = {
+      filereader: document.getElementById('filereader'),
+      formdata: document.getElementById('formdata'),
+      progress: document.getElementById('progress')
+    },
+    acceptedTypes = {
+      'image/png': true,
+      'image/jpeg': true,
+      'image/gif': true
+    },
+    oldData;
+
+"filereader formdata progress".split(' ').forEach(function (api) {
+  if (tests[api] === false) {
+    support[api].className = 'fail';
+  } else {
+    // FFS. I could have done el.hidden = true, but IE doesn't support
+    // hidden, so I tried to create a polyfill that would extend the
+    // Element.prototype, but then IE10 doesn't even give me access
+    // to the Element object. Brilliant.
+    support[api].className = 'hidden';
+  }
+});
+
+function previewfile(file) {
+  if (tests.filereader === true && acceptedTypes[file.type] === true) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+      var image = new Image();
+      image.src = event.target.result;
+      image.width = 500; // a fake resize
+      initCrope(image);
+    };
+
+    reader.readAsDataURL(file);
+  }  else {
+    holder.innerHTML += '<p>Uploaded ' + file.name + ' ' + (file.size ? (file.size/1024|0) + 'K' : '');
+  }
+}
+
+function readfiles(files) {
+
+    var formData = tests.formdata ? new FormData() : null;
+    for (var i = 0; i < files.length; i++) {
+      if (tests.formdata) formData.append('file', files[i]);
+      previewfile(files[i]);
+    }
+
+/*    // now post a new XHR request
+    if (tests.formdata) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/mobteh.php');
+      xhr.onload = function() {
+        progress.value = progress.innerHTML = 100;
+      };
+
+      if (tests.progress) {
+        xhr.upload.onprogress = function (event) {
+          if (event.lengthComputable) {
+            var complete = (event.loaded / event.total * 100 | 0);
+            progress.value = progress.innerHTML = complete;
+          }
+        }
+      }
+
+      xhr.send(formData);
+    }*/
+}
+
+if (tests.dnd) { 
+  holder.ondragover = function () { this.className = 'hover'; return false; };
+  holder.ondragend = function () { this.className = ''; return false; };
+  holder.ondrop = function (e) {
+    this.className = '';
+    e.preventDefault();/*
+    console.log(e.dataTransfer.files)*/
+    readfiles(e.dataTransfer.files);
+  }
+}
+
+
+
+
+/*cropie ====>>>*/
+
+function initCrope(img){
+	var el = document.getElementById('load-image');
+	var vanilla = new Croppie(el, {
+    viewport: { width: 100, height: 100 },
+    boundary: { width: "100%", height: 100 },
+    showZoomer: false,
+    enableOrientation: true
+	});
+
+	vanilla.bind({
+	    url: img.src,
+	});
+	//on button click
+	$("#download-control li").eq(0).on("click", function(){
+		vanilla.result('canvas').then(function (src) {
+			drowCroppieElement($("<img src='"+src+"'>"));
+		});
+	})
+}
+
+function drowCroppieElement(img){
+
 }

@@ -34,9 +34,6 @@ jQuery(document).ready(function(){
 		}
 	})
 
-	
-
-
 
 	/*swich repost/new*/
 
@@ -77,7 +74,7 @@ jQuery(document).ready(function(){
 			var timeArr = newTime.split(":");
 			if(timeArr[0] == 24){
 				timeArr[0] = "00"
-			}else if(timeArr[0]<0){
+			}else if(timeArr[0]<9){
 				timeArr[0] = +timeArr[0] +1;
 				timeArr[0] = "0" + timeArr[0];
 			}else{

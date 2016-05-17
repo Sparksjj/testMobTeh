@@ -135,7 +135,10 @@ body{
 	margin-right: 0;
 }
 
-
+	#repost-article textarea{
+		width: 100%;
+		height: 450px;
+	}
 #load-image{
 	position: absolute;
 
@@ -249,7 +252,7 @@ body{
 	color: #5c5fc9;
 	font-size: 16px;
 }
-#repost .text-filds, #emptyMessage .text-filds{
+#repost .text-filds, #emptyMessage .text-filds,  .text-filds{
 	border: none;
 	border-bottom: 1px solid #5c5fc9;
 	border-radius: 0;
@@ -705,6 +708,7 @@ body{
 		font-size: 14px;
 		line-height: 19px;
 	}
+
 
 	#calendar {
   		width: 100%;

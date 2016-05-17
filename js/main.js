@@ -152,15 +152,6 @@ jQuery(document).ready(function(){
 
 
 	var holder = document.getElementById('load-image'),
-	    tests = {
-	      filereader: typeof FileReader != 'undefined',
-	      dnd: 'draggable' in document.createElement('span'),
-	      formdata: !!window.FormData
-	    }, 
-	    support = {
-	      filereader: document.getElementById('filereader'),
-	      formdata: document.getElementById('formdata'),
-	    },
 	    acceptedTypes = {
 	      'image/png': true,
 	      'image/jpeg': true,
@@ -169,7 +160,7 @@ jQuery(document).ready(function(){
 	    oldData;
 
 	function previewfile(file) {
-	  if (tests.filereader === true && acceptedTypes[file.type] === true) {
+	  if (acceptedTypes[file.type] === true) {
 	    drowSuccess("Преретащите сюда")
 
 	    var reader = new FileReader();

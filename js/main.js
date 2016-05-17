@@ -1,6 +1,6 @@
-	/*scroll*/
 jQuery(document).ready(function(){
-	    jQuery('.scrollbar-inner').scrollbar();
+/*scroll init*/
+	jQuery('.scrollbar-inner').scrollbar();
 
 
 	/*hide show user info panel*/

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+   <!--  <meta http-equiv="Access-Control-Allow-Origin" content="*">  -->
     <title>Test</title>
 
     <!-- Bootstrap -->
@@ -93,7 +93,7 @@
        <div id="load-image">
        <section id="emptyMessage">
          <i class="fa fa-download fa-3x" aria-hidden="true"></i>
-         Преретащите сюда <br/>
+         <p id="drop-mess">Преретащите сюда</p> 
          фотографию или видио 
          <span>(JPG, PNG, MP4, AVI, 3GP)</span>
          <p id="upload" class="hidden"><input type="file" id="file"></p>
@@ -170,7 +170,19 @@
           <tbody>
         </table>
 
-        <p><span>13:00</span><i class="fa fa-clock-o fa-lg pull-right" aria-hidden="true"></i></p>
+        <p>
+          <span id="current-time">13:00</span> 
+
+          <div id="time-options">
+            <ul class="list-unstyled">
+                <li>14:00</li>
+                <li>15:00</li>
+                <li>16:00</li>
+            </ul>
+          </div>
+
+          <i class="fa fa-clock-o fa-lg" aria-hidden="true" id="clock-i"></i>
+        </p>
 
         <ul id="calendar-control" class="list-unstyled text-center">
           <li>В очередь <i class="fa fa-calendar fa-lg pull-right" aria-hidden="true"></i></li>
@@ -179,7 +191,6 @@
 
       </section>
     </div>
-
   </div>
 
 </div>    

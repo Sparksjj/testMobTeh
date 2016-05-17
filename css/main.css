@@ -225,7 +225,16 @@ body{
     z-index: 100;
     
 }
-
+#drop-mess{
+	margin: 0;
+}
+.ondragover{
+	background-color: #ddd;
+	border:	1px solid #ccc;
+}
+.drop-error{
+	border:	1px solid red;
+}
 /* repost */
 #repost{
 	display: none;
@@ -407,17 +416,42 @@ body{
 	left: 50%;
 	margin-left: -30%;
 	border-bottom: 1px solid #ccc;
+	cursor: pointer;
 }
 #calendar-section > p span{
 	color: #5c5fc9;
 	font-size: 18px;
 }
 
-#calendar-section > p i{
+#calendar-section #clock-i{
+	position: absolute;
+	right: 20%;
+	bottom: 183px;
 	color: #aaa;
 	line-height: 25px;
 }
 
+/*time options*/
+#time-options{
+	position: absolute;
+	left: 20%;
+	top: 430px;
+	width: 50px;
+	text-align: center;
+	border-top: 1.3px solid #5c5fc9;
+	box-shadow: 1px 1px 5px 0px black;
+	background-color: #fff;
+	display: none;
+	z-index: 10;
+}
+#time-options ul{
+	margin: 0;
+}
+#time-options ul{
+	margin: 3px;
+	color: #5c5fc9;
+	cursor: pointer;
+}
 /* calendar controll ===>>> */
 #calendar-control{
 	position: absolute;
@@ -598,14 +632,14 @@ body{
 		height: 1870px;
 	}
 	#for-scroll{
-	height: 2000px;
+		height: 2000px;
 	}
 }
 @media only screen and (max-width: 1165px){
 	/* top menu */
 	.top-menu .left-links li > a{
-		padding-left: 50px;
-		padding-right: 10px;
+		padding-left: 53px;
+		padding-right: 8px;
 	}
 
 }
@@ -679,7 +713,13 @@ body{
     	width: 90%;
     	margin-left: -45%;
 	}
+	#time-options{
+		left: 5%;
+	}
 
+	#calendar-section #clock-i{
+		right: 5%;
+	}
 }
 
 @media only screen and (max-width: 767px){

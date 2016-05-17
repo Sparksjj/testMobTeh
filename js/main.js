@@ -22,6 +22,21 @@ jQuery(document).ready(function(){
 		$("#hide-show-button").animate({left: position}, 200);
 	});
 
+	/*floating menu*/
+	var flag = true;
+	$(document).scroll(function(){
+		if($(this).scrollTop()>150 && flag){
+			$(".top-menu").css({"position": "fixed", "width": "100%", "top": "-100px", "left": "0"}).animate({"top": "0", "left": "0"}, 200);
+			flag= false;
+		}else if($(this).scrollTop()<150 && !flag){	
+			$(".top-menu").css({"position": "", "width": "", "top": "", "left": ""})
+			flag= true;
+		}
+	})
+
+	
+
+
 
 	/*swich repost/new*/
 

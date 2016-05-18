@@ -37,18 +37,20 @@ jQuery(document).ready(function(){
 
 	/*swich repost/new*/
 
-	$("#center-block > .list-inline li").eq(0).on("click", function(){
-		$("#add-file").css("display", "block");
-		$("#repost").css("display", "none");
-		$("#center-block > .list-inline li").eq(0).css({"background-color": "#5c5fc9", "color": "#fff"});
-		$("#center-block > .list-inline li").eq(1).css({"background-color": "#fff", "color": "#5c5fc9"});
+	$("#center-block > ul.list-inline").on("click", "li", function(){
+		$("#center-block > ul.list-inline li").css({"background-color": "#5c5fc9", "color": "#fff"});
+		$(this).css({"background-color": "#fff", "color": "#5c5fc9"})
+
+		if ($(this).text() == "Новый") {
+			$("#add-file").fadeIn(100);
+			$("#repost").fadeOut(100);
+		}else{
+			$("#add-file").fadeOut(100);		
+			$("#repost").fadeIn(100);	
+		};
+		
 	})
-	$("#center-block .list-inline li").eq(1).on("click", function(){
-		$("#add-file").css("display", "none");
-		$("#repost").css("display", "block");
-		$("#center-block > .list-inline li").eq(1).css({"background-color": "#5c5fc9", "color": "#fff"});
-		$("#center-block > .list-inline li").eq(0).css({"background-color": "#fff", "color": "#5c5fc9"});
-	})
+
 
 	/*clock help*/
 	var currentTine = (new Date().getHours())+":"+(new Date().getMinutes());
